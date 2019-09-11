@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jdk
 
 USER root
 
@@ -7,7 +7,7 @@ ENV ANDROID_HOME="/usr/local/android-sdk" \
     ANDROID_VERSION=29 \
     ANDROID_BUILD_TOOLS_VERSION=29.0.0
 
-ENV SDK="$ANDROID_HOME/.android" \
+ENV SDK="$ANDROID_HOME" \
     LICENSES_HOME="$ANDROID_HOME/licenses" \
     PATH="$PATH:$ANDROID_HOME/tools/bin"
 
@@ -34,5 +34,5 @@ RUN echo "Installing android build tools and libraries..." \
     && $SDK_MANAGER --update \
     && $SDK_MANAGER "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
     "platforms;android-${ANDROID_VERSION}" \
-    "platform-tools" | grep -v || true \
+    "platform-tools" | grep -v = || true \
     && echo "Done"

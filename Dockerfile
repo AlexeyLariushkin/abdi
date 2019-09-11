@@ -11,17 +11,17 @@ ENV SDK="$ANDROID_HOME/.android" \
     LICENSES_HOME="$ANDROID_HOME/licenses" \
     PATH="$PATH:$ANDROID_HOME/tools/bin"
 
-ENV SDK_MANAGER="$SDK/tools/bin/sdkmanager"
+ENV SDK_MANAGER="$ANDROID_HOME/tools/bin/sdkmanager"
 
 # Install SDK tools
 RUN echo "Downloading sdk tools..." \
     && mkdir -p $SDK \
     && wget --quiet -O $SDK/sdk-tools.zip $SDK_URL \
     && echo "Extracting sdk tools..." \
-    && unzip -q $SDK/sdk-tools.zip -d $SDK\
+    && unzip -q $SDK/sdk-tools.zip -d $ANDROID_HOME\
     && rm $SDK/sdk-tools.zip \
-    && touch $SDK/repositories.cfg \
-    && echo "Done" \
+    && touch $ANDROID_HOME/repositories.cfg \
+    && echo "Done"
 
 RUN echo "Applying licenses" \
     && mkdir -p $LICENSES_HOME || true \
@@ -31,8 +31,8 @@ RUN echo "Applying licenses" \
 
 # Install android build tools and libraries
 RUN echo "Installing android build tools and libraries..." \
-    && $SDK_MANAGER --quiet --update \
-    && $SDK_MANAGER --quiet "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
+    && $SDK_MANAGER --update \
+    && $SDK_MANAGER "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
     "platforms;android-${ANDROID_VERSION}" \
-    "platform-tools" | grep -v ||true \
+    "platform-tools" | grep -v || true \
     && echo "Done"

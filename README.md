@@ -3,7 +3,7 @@
 
 --------
 
-This image has aimed to be a lightweight tool to build android projects and based on gradle official image - [gradle/5.6.2-jdk8](https://hub.docker.com/_/gradle?tab=description).
+This image has aimed to be a lightweight tool to build android projects and based on [gradle official image](https://hub.docker.com/_/gradle?tab=description).
 
 ## How to use
 `cd` to your android project folder, and run

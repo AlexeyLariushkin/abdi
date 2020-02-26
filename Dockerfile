@@ -1,7 +1,7 @@
-FROM gradle:5.6.2-jdk8
+FROM gradle:6.2-jdk8
 
-ENV ANDROID_VERSION=28 \
-    ANDROID_BUILD_TOOLS_VERSION=28.0.3 \
+ENV ANDROID_VERSION=29 \
+    ANDROID_BUILD_TOOLS_VERSION=28.0.2 \
     ANDROID_HOME="/usr/local/android-sdk" \
     SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip" \
     GRADLE_OPTS="-Dorg.gradle.daemon=false -Dorg.gradle.caching=true"

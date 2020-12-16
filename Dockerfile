@@ -1,6 +1,6 @@
-FROM gradle:6.4-jdk8
+FROM gradle:6.7.1-jdk8
 
-ENV ANDROID_VERSION=29 \
+ENV ANDROID_VERSION=30 \
     ANDROID_BUILD_TOOLS_VERSION=29.0.3 \
     ANDROID_HOME="/usr/local/android-sdk" \
     SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip" \

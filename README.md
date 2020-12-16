@@ -1,5 +1,5 @@
 # 👷🏾 ABDI - Android app Builder Docker Image
-![](https://img.shields.io/badge/Android%20SDK-29-green) ![](https://img.shields.io/badge/Android%20build--tools-29.0.3-green) ![](https://img.shields.io/badge/Gradle%20version-6.4-green) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/ivanprok/abdi)
+![](https://img.shields.io/badge/Android%20SDK-30-green) ![](https://img.shields.io/badge/Android%20build--tools-29.0.3-green) ![](https://img.shields.io/badge/Gradle%20version-6.7.1-green) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/ivanprok/abdi)
 
 --------
 

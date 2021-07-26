@@ -15,5 +15,5 @@ I.e. `jdk8-5.6.2-29-29.0.0` means that docker container built from this tag will
 ## How to use
 `cd` to your android project folder, and run
 ```bash
-docker run --rm -v $(PWD):/root/project" ivanprok/abdi:latest gradle build
+docker run --rm -v "$(PWD):/root/project" ivanprok/abdi:latest gradle build
 ```

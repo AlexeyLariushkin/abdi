@@ -12,6 +12,13 @@ ENV SDK="$ANDROID_HOME" \
 
 ENV SDK_MANAGER="${ANDROID_HOME}/tools/bin/sdkmanager"
 
+# Install build tools
+RUN apt-get update && \
+  apt-get install -y \
+  build-essential \
+  ruby \
+  ruby-dev
+
 # Install SDK tools
 RUN echo "Downloading sdk tools..." \
     && mkdir -p $SDK \
